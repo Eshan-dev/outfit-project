@@ -35,7 +35,7 @@ export default function App(){
         <SearchBar onSearch={handleSearch} />
         {loading && <div className="loading">Loading weather data...</div>}
         {error && <div className="error">{error}</div>}
-        {data && <div className="weather"><WeatherCard data={data} /></div>}
+        {data && <div className="weather" suppressHydrationWarning><WeatherCard key={data.weather.location} data={data} /></div>}
       </div>
     </div>
   )
